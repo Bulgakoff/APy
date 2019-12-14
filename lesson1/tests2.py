@@ -65,7 +65,7 @@ for p in a:
     else:
         sum2 += p
 print(f'......>>>>>{sum2}')
-print('//////////////gjrfока наша мумма Ю10/////')
+print('//////////////пока наша сумма < 10/////')
 a = [1, 2.4, 4.5, 6, 6, 67, 6, -5, -6, -7, -7, -2]
 dd = []
 i = 0
@@ -76,3 +76,58 @@ while a[i] > 0 and sum3 < 10:
     i += 1
 print(sum3)
 print(dd)
+print('//////////////тонкость while огда всегда True нужно ежеодно условие/////')
+a = [1, 2.4, 4.5, 6, 6, 67, 6]
+dd = []
+i = 0
+sum3 = 0
+while len(a) > i and a[i] > 0:
+    sum3 = sum3 + a[i]
+    dd.append(sum3)
+    i += 1
+print(sum3)
+print(dd)
+print('/////////////дз    /////')
+
+qwe = [1, 2.4, 4.5, 5, 6, -67, -6, -5, -6, -4]
+qwerty = list(reversed(qwe))
+print(qwerty)
+s4 = 0
+i = 0
+while qwerty[i] < 0 and i < len(qwerty):
+    s4 += qwerty[i]
+    i += 1
+print(s4)
+
+for p in range(qwe[len(qwe) - 1], qwe[0], -1):  # 1й аргум - старт, 2й аргум - cтоп (не включая),
+    # 3й аргум - шаг просмотра (перехода (инкркментации<здесь декрементатции>)),
+    s4 += p
+print(s4)
+
+print('///////////for /for /for /for ///тонкость while огда всегда True нужно ежеодно условие/////')
+
+names = ['Non', 'Vov', 'Coc', 'Xox', 'Dod']
+for i, item in enumerate(names):
+    if names[i] == 'Non':
+        print(f'-- {item} ' * 3)
+    elif names[i] == 'Coc':
+        print(f'-- {item} ' * 3)
+print('///////////ложенные циклы begine/////')
+
+for item in names:
+    print(item, end=' ')
+print()
+
+for i in range(len(names)):
+    print(names[i], end=' ')
+print('///////////ложенные циклы2/////\n')
+
+for i in range(len(names)):
+    for j in range(i+1):#ange показывает диапазон итераций - повторений
+        print(names[i])
+
+print('///////////enumarate это круто /////\n')
+
+for i, item in enumerate(names):
+    for j in range(i):
+        print(item)
