@@ -126,8 +126,75 @@ print(qwer)
 res_max_key_w = ['no' if 'задча' not in qwer else k for k, v in my_dict.items() if v == max(my_dict.values())]
 print(f'============================={res_max_key_w}')
 
-# count = 0
-# for p in qwer:
-#     my_dict[p] = 0
-
 print(my_dict)
+# ////////////////////////////////////////
+qwe = 'задача задача задача задача задача задача перевод в словарь списка  перевод в словарь словарь словарь словарь '
+qwer = qwe.split()
+aaa = {}
+for p in qwer:
+    if p not in aaa:
+        aaa[p] = 1
+    else:
+        aaa[p] = aaa[p] + 1
+print(f'-----------==if p not in aaa:========+++++++{aaa}')
+# /////////////////////////////////////////////////////////////////
+aaa = {}
+for p in qwer:
+    aaa[p] = aaa.get(p, 0) + 1
+print(f'-----------==aaa.get(p, 0)========+++++++{aaa}')
+# ////////////////////////////////////////////////
+qwe = 'задача задача задача задача задача задача перевод в словарь списка  перевод в словарь словарь словарь словарь '
+qwer = qwe.split()
+aaa = {}
+for p in qwer:
+    res = qwer.count(p)
+    aaa[p] = res
+print(f'--------qwer.count(p)------------{aaa}')
+
+# //////////////////////////////////////////////////////////
+
+qqq = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+qwe = [1, 2, 3]
+
+
+def swap(q, w, e):
+    temp = q[e]
+    q[e] = q[w]
+    q[w] = temp
+
+
+def mirror1(q):
+    www = []
+    for p in q:
+        p.reverse()
+        www.append(p)
+    return www
+
+
+result = mirror1(qqq)
+print(f'---in --buffer--www = []---------{result}-')
+
+
+# /////////////////////////////////////////
+def mirror2(q):
+    for arr in q:
+        for j in range(len(arr) // 2):  # число иттераций сколько раз два крайинх элемента
+            # меняются местами в иттерации arr внешенгог цикла q
+            swap(arr, j, len(arr) - 1 - j)  # в вызове индексы
+
+    return q
+
+
+result2 = mirror2(qqq)
+print(f'-----temp = q[i][len(i)-1]-----------{result2}')
+
+
+# /////////////////////////////////////////////////
+def pri_matrix(mirror_tab):
+    for i in range(len(mirror_tab)):
+        for j in range(len(mirror_tab[i])):
+            print(mirror_tab[i][j], end=' ')
+        print('топор')
+
+
+pri_matrix(mirror1(result))
