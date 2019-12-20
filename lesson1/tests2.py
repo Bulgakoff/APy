@@ -123,7 +123,7 @@ for i in range(len(names)):
 print('///////////ложенные циклы2/////\n')
 
 for i in range(len(names)):
-    for j in range(i+1):#ange показывает диапазон итераций - повторений
+    for j in range(i + 1):  # ange показывает диапазон итераций - повторений
         print(names[i])
 
 print('///////////enumarate это круто /////\n')
@@ -131,3 +131,76 @@ print('///////////enumarate это круто /////\n')
 for i, item in enumerate(names):
     for j in range(i):
         print(item)
+        print(f'-----{j}', end=' ')
+
+print('///////////enumarate это круто /////\n')
+names = ['Non', 6, 6, 67, 6, 'Vov', 6, 'Coc', 6, 67, 6]
+
+d = {}
+z = None
+for item in names:
+    if type(item) == str:
+        d[item] = []
+        z = item
+    else:
+        d[z].append(item)
+print(d)
+
+print('///////////кол слов в списке  в списке  списке через словарь/////\n')
+lik = 'кол слов в списке  в списке  списке через словарь'
+qwe = lik.split()
+result = {i: qwe.count(i) for i in qwe}
+print(result)
+result = [k for k, v in result.items() if v == max(result.values())]
+print(result)
+# ////////////////////////////////////////////
+print('/////////////////////////////////////')
+lik = 'кол слов в списке  в списке  списке через словарь'
+qwe = lik.split()
+
+asd = {}
+temp = 0
+for p in qwe:
+    asd[p] = []
+    temp = qwe.count(p)
+    asd[p].append(temp)
+
+print(asd)
+print('////////////////////lhдругой вариант/////////////////')
+lik = 'кол слов в списке  в списке  списке через словарь'
+qwe = lik.split()
+
+asd = {}
+temp = 0
+for p in qwe:
+    if p in asd:
+        asd[p] = asd[p] + 1
+    else:
+        asd[p] = 1
+print(asd)
+
+print('////////////////////lhдругой вариант/////get(... , ...)/////////////////')
+
+lik = 'кол слов в списке  в списке  списке через словарь'
+qwe = lik.split()
+
+asd = {}
+temp = 0
+for p in qwe:
+    asd[p] = asd.get(p, 0) + 1
+print(f'================================================={asd}')
+print('///////////////////списк списков////////////////')
+
+
+def arr_2d(m, n):
+    arr_2d = []
+    for i in range(m):
+        print()
+        inter_arr = []
+        for j in range(n):
+            inter_arr.append(0)
+
+    return arr_2d
+
+
+print(arr_2d(4, 4))
