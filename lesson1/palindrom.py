@@ -10,7 +10,7 @@ print('/////////////')
 print(f'-----z {z}')
 z = ''.join(z)
 print(f'z ============>>>>>>>{z}')
-print(z==zz)
+print(z == zz)
 
 
 # qwe = a.split()
