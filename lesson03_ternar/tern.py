@@ -22,3 +22,47 @@ print(names1)
 a = [1, 2, 3]
 b = a[:]
 print(b)
+# /////////////////////////////
+import random
+
+n = random.randint(2, 5)
+print(n)
+a = 10
+b = 0
+try:
+    if n == 4:
+        print('gggggggggggggg')
+except ValueError:
+    print('hfhfhhfhfhhfhfhjfjjjjjjjjjjjjjjj')
+
+
+def pr(nnn):
+    return nnn
+
+
+res_pr = pr(n)
+pr(res_pr)
+
+# 4. Написать функцию которая принимает на вход число от 1 до 100. Если число равно 13,
+# функция поднимает исключительную ситуации ValueError иначе возвращает введенное число, возведенное в квадрат.
+# Далее написать основной код программы. Пользователь вводит число.
+# Введенное число передаем параметром в написанную функцию и печатаем результат, который вернула функция.
+# Обработать возможность возникновения исключительной ситуации, которая поднимается внутри функции.
+import random
+
+n = random.randint(5, 8)
+
+
+def numbers(nn):
+    if nn == 8:
+        raise ValueError(f'Mistaken {nn}')
+    else:
+        return nn ** 2
+
+
+try:
+    res_numbers = numbers(n)
+except ValueError as a:
+    print(a)
+else:
+    print(res_numbers)
